@@ -1,0 +1,19 @@
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th *ngFor="let columnaActual of columnas" scope="col">
+                    {{columnaActual}}
+                </th>
+            </tr>
+               
+        </thead>
+        <tbody>
+            <tr *ngFor="let usuarioActual of misUsuarios" >
+                <td scope="col">{{usuarioActual.id}}</td>
+                <td scope="col">{{usuarioActual.nombre}}</td>
+                <td scope="col">{{usuarioActual.correo}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
