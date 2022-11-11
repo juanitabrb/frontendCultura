@@ -1,1 +1,35 @@
-<p>crear works!</p>
+<div class="container">
+  <div class="row">
+    <h1 *ngIf="modoCreacion">Crear Usuario</h1>
+    <h1 *ngIf="!modoCreacion">Actualizar Usuario</h1>
+  </div>
+  <div class="row">
+    <div class="col-3">
+      <label>Nombre</label>
+    </div>
+    <div class="col-9">
+      <input type="text" class="form-control" [(ngModel)]="elUsuario.nombre" />
+    </div>
+  </div>
+  <div class="row" *ngIf="modoCreacion">
+    <div class="col-3">
+      <label>Contraseña</label>
+    </div>
+    <div class="col-9">
+      <input type="password" class="form-control" [(ngModel)]="elUsuario.contrasena" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-3">
+      <label>Correo</label>
+    </div>
+    <div class="col-9">
+      <input type="text" class="form-control" [(ngModel)]="elUsuario.correo" />
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <button *ngIf="modoCreacion" class="btn btn-primary btn-block" (click)="crear()"> Crear</button>
+    <button *ngIf="!modoCreacion" class="btn btn-success btn-block" (click)="actualizar()"> Actualizar</button>
+  </div>
+</div>

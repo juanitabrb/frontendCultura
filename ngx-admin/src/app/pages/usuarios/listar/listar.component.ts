@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import Swal from "sweetalert2";
 import { Usuario } from "../../../models/usuario.model";
 import { UsuarioService } from "../../../services/usuario.service";
+import { Router } from '@angular/router';
 
 @Component({
   selector: "ngx-listar",
@@ -11,7 +12,9 @@ import { UsuarioService } from "../../../services/usuario.service";
 export class ListarComponent implements OnInit {
   columnas: string[] = ["ID", "Nombre", "Correo", "Rol", "Acciones"];
   misUsuarios: Usuario[];
-  constructor(private miServicioUsuarios: UsuarioService) {}
+  constructor(private miServicioUsuarios: UsuarioService, private router:Router) {
+    
+  }
 
   ngOnInit(): void {
     this.listarUsuarios();
@@ -23,6 +26,7 @@ export class ListarComponent implements OnInit {
       console.log(data);
     });
   }
+
 
   eliminar(id: number): void {
     Swal.fire({
@@ -45,6 +49,10 @@ export class ListarComponent implements OnInit {
     });
   }
   actualizar(id: number): void {
-    console.log("actualizando a " + id);
+    this.router.navigate(['/pages/usuarios/actualizar/'+id]);
+  }
+
+  crear(): void {
+    this.router.navigate(['/pages/usuarios/crear']);
   }
 }
