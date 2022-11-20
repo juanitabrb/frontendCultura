@@ -1,7 +1,8 @@
 export class Usuario {
     id?: number;
-    nombre: string;
-    correo: string;
-    contrasena: string;
+    nombre?: string;
+    correo?: string;
+    contrasena?: string;
     id_rol?:number;
+    token?: string;
 }
