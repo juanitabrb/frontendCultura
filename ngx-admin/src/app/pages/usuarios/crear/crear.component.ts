@@ -32,7 +32,7 @@ export class CrearComponent implements OnInit {
   }
   getUsuario(id:number){
     this.miServicioUsuarios.show(id).subscribe(data => {
-      this.elUsuario=data[0];
+      this.elUsuario=data;
     });
   }
   crear(){

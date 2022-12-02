@@ -1,0 +1,26 @@
+<div class="container">
+    <h1>Usuarios</h1>
+    <button class="btn btn-primary" (click)="crear()">Crear</button>
+    <table class="table">
+        <thead>
+            <tr>
+                <th *ngFor="let columnaActual of columnas" scope="col">
+                    {{columnaActual}}
+                </th>
+            </tr>
+               
+        </thead>
+        <tbody>
+            <tr *ngFor="let usuarioActual of misUsuarios" >
+                <td scope="col">{{usuarioActual.id}}</td>
+                <td scope="col">{{usuarioActual.nombre}}</td>
+                <td scope="col">{{usuarioActual.correo}}</td>
+                <td scope="col">{{usuarioActual.rol?.nombre}}</td>
+                <td scope="col">
+                <button class="btn btn-success" (click)="actualizar(usuarioActual.id)">Actualizar</button>
+                    <button class="btn btn-danger" (click)="eliminar(usuarioActual.id)">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
