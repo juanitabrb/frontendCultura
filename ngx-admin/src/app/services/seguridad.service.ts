@@ -101,5 +101,10 @@ export class SeguridadService {
     let sesionActual = localStorage.getItem('sesion');
     return sesionActual;
   }
+
+  verificarRolSesion(roleId):Boolean{
+    let currentSesion=JSON.parse(this.getDatosSesion());
+    return(currentSesion.id_rol==roleId);
+  }
 }
 
