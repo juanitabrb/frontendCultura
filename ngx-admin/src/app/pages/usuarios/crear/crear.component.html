@@ -21,6 +21,16 @@
   </div>
   <div class="row">
     <div class="col-3">
+      <label>Rol</label>
+    </div>
+    <div class="col-9">
+      <select class="form-control" [(ngModel)]="idrolSeleccionado">
+        <option *ngFor="let item of roles" [value]="item.id" selected>{{item.nombre}}</option>
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-3">
       <label>Correo</label>
     </div>
     <div class="col-9">
