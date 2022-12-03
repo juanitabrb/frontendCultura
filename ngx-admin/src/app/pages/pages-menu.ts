@@ -28,6 +28,21 @@ export const MENU_ITEMS: NbMenuItem[] = [
     ]
   },
   {
+    title: 'Sitios',
+    icon: 'people-outline',
+    link: '/pages/sitios',
+    children: [
+      {
+        title: 'Listar',
+        link: '/pages/sitios/listar',
+      },
+      {
+        title: 'Crear',
+        link: '/pages/sitios/crear',
+      },
+    ]
+  },
+  {
     title: 'FEATURES',
     group: true,
   },

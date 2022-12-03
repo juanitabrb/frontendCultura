@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import Swal from "sweetalert2";
-import { Usuario } from "../../../models/usuario.model";
-import { UsuarioService } from "../../../services/usuario.service";
 import { Router } from '@angular/router';
+import { SitiosService } from '../../../services/sitios.service';
+import { Sitio } from '../../../models/sitio.model';
 
 @Component({
   selector: 'ngx-listar',
@@ -10,18 +10,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./listar.component.scss']
 })
 export class ListarComponent implements OnInit {
-  columnas: string[] = ["ID", "Nombre", "Correo", "Rol", "Acciones"];
-  misUsuarios: Usuario[];
+  columnas: string[] = ["ID", "Nombre", "Direccion", "Capacidad"];
+  misSitios: Sitio[];
 
-  constructor(private miServicioUsuarios: UsuarioService, private router:Router) {}
+  constructor(private sitiosService: SitiosService, private router:Router) {}
 
   ngOnInit(): void {
     this.listarUsuarios();
   }
 
   listarUsuarios(): void {
-    this.miServicioUsuarios.index().subscribe((data) => {
-      this.misUsuarios = data;
+    this.sitiosService.index().subscribe((data) => {
+      this.misSitios = data;
       console.log(data);
     });
   }
@@ -35,7 +35,7 @@ export class ListarComponent implements OnInit {
       confirmButtonText: "Si, eliminar",
     }).then((result) => {
       if (result.isConfirmed) {
-        this.miServicioUsuarios.destroy(id).subscribe((data) => {
+        this.sitiosService.destroy(id).subscribe((data) => {
           Swal.fire(
             "Eliminado!",
             "El usuario ha sido eliminado correctamente",
@@ -47,11 +47,11 @@ export class ListarComponent implements OnInit {
     });
   }
   actualizar(id: number): void {
-    this.router.navigate(['/pages/usuarios/actualizar/'+id]);
+    this.router.navigate(['/pages/sitios/actualizar/'+id]);
   }
 
   crear(): void {
-    this.router.navigate(['/pages/usuarios/crear']);
+    this.router.navigate(['/pages/sitios/crear']);
   }
 
 }

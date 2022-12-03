@@ -1,1 +1,37 @@
-<p>crear works!</p>
+<div class="container">
+    <div class="row">
+      <h1 *ngIf="modoCreacion">Crear Sitio</h1>
+      <h1 *ngIf="!modoCreacion">Actualizar Sitio</h1>
+    </div>
+    <div class="row">
+      <div class="col-3">
+        <label>Nombre</label>
+      </div>
+      <div class="col-9">
+        <input type="text" class="form-control" [(ngModel)]="elSitio.nombre" />
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-3">
+        <label>Direccion</label>
+      </div>
+      <div class="col-9">
+        <input type="text" class="form-control" [(ngModel)]="elSitio.direccion" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3">
+        <label>Capacidad</label>
+      </div>
+      <div class="col-9">
+        <input type="number" class="form-control" [(ngModel)]="elSitio.capacidad" />
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <button *ngIf="modoCreacion" class="btn btn-primary btn-block" (click)="crear()"> Crear</button>
+      <button *ngIf="!modoCreacion" class="btn btn-success btn-block" (click)="actualizar()"> Actualizar</button>
+    </div>
+  </div>
+  

@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { SitiosRoutingModule } from './sitios-routing.module';
 import { ListarComponent } from './listar/listar.component';
 import { CrearComponent } from './crear/crear.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { CrearComponent } from './crear/crear.component';
   ],
   imports: [
     CommonModule,
-    SitiosRoutingModule
+    SitiosRoutingModule,
+    FormsModule
   ]
 })
 export class SitiosModule { }
