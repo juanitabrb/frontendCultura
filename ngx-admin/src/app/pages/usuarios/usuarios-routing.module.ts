@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdministradorGuard } from '../../guardianes/administrador.guard';
 import { CrearComponent } from './crear/crear.component';
 import { ListarComponent } from './listar/listar.component';
 
@@ -10,6 +11,7 @@ const routes: Routes = [
   },
   {
     path: 'crear',
+    canActivate: [AdministradorGuard],
     component: CrearComponent
   },
   {

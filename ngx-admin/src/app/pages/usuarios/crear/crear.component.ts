@@ -3,6 +3,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Usuario } from '../../../models/usuario.model';
 import { UsuarioService } from '../../../services/usuario.service';
 import Swal from 'sweetalert2';
+import { RolService } from '../../../services/rol.service';
+import { Rol } from "../../../models/rol.model";
 
 @Component({
   selector: "ngx-crear",
@@ -17,9 +19,13 @@ export class CrearComponent implements OnInit {
     "correo":"",
     "contrasena":""
   }
+  roles:Rol[]=[];
+  idrolSeleccionado:number=0;
+  
   constructor(private rutaActiva: ActivatedRoute,
               private miServicioUsuarios:UsuarioService,
-              private router:Router) {}
+              private router:Router,
+              private miServicioRoles:RolService) {}
 
   ngOnInit(): void {
     if (this.rutaActiva.snapshot.params.id) {
@@ -29,13 +35,23 @@ export class CrearComponent implements OnInit {
     } else {
       this.modoCreacion = true;
     }
+    this.getRoles();
+  }
+
+  getRoles(){
+    this.miServicioRoles.index().subscribe(data => {
+      this.roles = data;
+    }
+    );
   }
   getUsuario(id:number){
     this.miServicioUsuarios.show(id).subscribe(data => {
       this.elUsuario=data;
+      this.idrolSeleccionado=this.elUsuario.id_rol;
     });
   }
   crear(){
+    this.elUsuario.id_rol=this.idrolSeleccionado;
     console.log("creando a"+JSON.stringify(this.elUsuario))
     this.miServicioUsuarios.create(this.elUsuario)
           .subscribe(data => {
@@ -48,6 +64,7 @@ export class CrearComponent implements OnInit {
         });
   }
   actualizar(){
+    this.elUsuario.id_rol=this.idrolSeleccionado;
     console.log("actualizando a"+JSON.stringify(this.elUsuario))
     this.miServicioUsuarios.update(this.elUsuario)
           .subscribe(data => {

@@ -10,5 +10,6 @@
 
 export const environment = {
   production: false,
-  url_backend: 'http://localhost:3333'
+  url_backend: 'http://localhost:3333',
+  ID_ROL_ADMIN: 1
 };

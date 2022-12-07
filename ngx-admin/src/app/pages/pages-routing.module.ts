@@ -5,6 +5,7 @@ import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ECommerceComponent } from './e-commerce/e-commerce.component';
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
+import { AutenticacionGuard } from '../guardianes/autenticacion.guard';
 
 const routes: Routes = [{
   path: '',
@@ -20,6 +21,7 @@ const routes: Routes = [{
     },
     {
       path: 'usuarios',
+      canActivate: [AutenticacionGuard],
       loadChildren: () => import('./usuarios/usuarios.module')
         .then(m => m.UsuariosModule)
     },
