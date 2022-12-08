@@ -33,15 +33,22 @@ export class PagesComponent {
     if (this.isLogged) {
       if (id == environment.ID_ROL_ADMIN) {
         nameMenuItems = [
+          //TODO: agregar demas cosas
+          "Eventos",
           "Usuarios",
-          "E-commerce"
-
+          "E-commerce",
+          "Sitios",
+          "Categorias",
+          "Agrupaciones",
+          "Managers",
+          "Contratos",
+          "Programaciones",
         ];
       } else {
-        nameMenuItems = ["E-commerce"];
+        nameMenuItems = ["Sitios"];
       }
     } else {
-      nameMenuItems = ["E-commerce"];
+      nameMenuItems = ["Sitios"];
     }
 
     //console.log("nameMenuItems->"+JSON.stringify(nameMenuItems))

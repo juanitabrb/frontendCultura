@@ -90,6 +90,7 @@ export class SeguridadService {
    */
   sesionExiste(): boolean {
     let sesionActual = this.getDatosSesion();
+    
     return (sesionActual) ? true : false;
   }
   /**
@@ -99,6 +100,7 @@ export class SeguridadService {
    */
   getDatosSesion() {
     let sesionActual = localStorage.getItem('sesion');
+    
     return sesionActual;
   }
 

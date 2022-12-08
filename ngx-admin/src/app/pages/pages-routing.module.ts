@@ -2,7 +2,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 
 import { PagesComponent } from './pages.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { ECommerceComponent } from './e-commerce/e-commerce.component';
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
 import { AutenticacionGuard } from '../guardianes/autenticacion.guard';
@@ -12,12 +11,10 @@ const routes: Routes = [{
   component: PagesComponent,
   children: [
     {
-      path: 'dashboard',
-      component: ECommerceComponent,
-    },
-    {
-      path: 'iot-dashboard',
-      component: DashboardComponent,
+      path: 'eventos',
+      canActivate: [AutenticacionGuard],
+      loadChildren: () => import('./eventos/eventos.module')
+        .then(m => m.EventosModule),
     },
     {
       path: 'usuarios',
@@ -27,6 +24,7 @@ const routes: Routes = [{
     },
     {
       path: 'sitios',
+      canActivate: [AutenticacionGuard],
       loadChildren: () => import('./sitios/sitios.module')
         .then(m => m.SitiosModule)
     },
@@ -37,62 +35,45 @@ const routes: Routes = [{
     },
     {
       path: 'roles',
+      canActivate: [AutenticacionGuard],
       loadChildren: () => import('./roles/roles.module')
         .then(m => m.RolesModule)
     },
     {
-      path: 'layout',
-      loadChildren: () => import('./layout/layout.module')
-        .then(m => m.LayoutModule),
+      path: 'categorias',
+      canActivate: [AutenticacionGuard],
+      loadChildren: () => import('./categorias/categorias.module')
+        .then(m => m.CategoriasModule)
+    },
+    //routes for agrupaciones, managers, contratos, programaciones
+    {
+      path: 'agrupaciones',
+      canActivate: [AutenticacionGuard],
+      loadChildren: () => import('./agrupaciones/agrupaciones.module')
+        .then(m => m.AgrupacionesModule)
     },
     {
-      path: 'forms',
-      loadChildren: () => import('./forms/forms.module')
-        .then(m => m.FormsModule),
+      path: 'managers',
+      canActivate: [AutenticacionGuard],
+      loadChildren: () => import('./managers/managers.module')
+        .then(m => m.ManagersModule)
     },
     {
-      path: 'ui-features',
-      loadChildren: () => import('./ui-features/ui-features.module')
-        .then(m => m.UiFeaturesModule),
+      path: 'contratos',
+      canActivate: [AutenticacionGuard],
+      loadChildren: () => import('./contratos/contratos.module')
+        .then(m => m.ContratosModule)
+
     },
     {
-      path: 'modal-overlays',
-      loadChildren: () => import('./modal-overlays/modal-overlays.module')
-        .then(m => m.ModalOverlaysModule),
-    },
-    {
-      path: 'extra-components',
-      loadChildren: () => import('./extra-components/extra-components.module')
-        .then(m => m.ExtraComponentsModule),
-    },
-    {
-      path: 'maps',
-      loadChildren: () => import('./maps/maps.module')
-        .then(m => m.MapsModule),
-    },
-    {
-      path: 'charts',
-      loadChildren: () => import('./charts/charts.module')
-        .then(m => m.ChartsModule),
-    },
-    {
-      path: 'editors',
-      loadChildren: () => import('./editors/editors.module')
-        .then(m => m.EditorsModule),
-    },
-    {
-      path: 'tables',
-      loadChildren: () => import('./tables/tables.module')
-        .then(m => m.TablesModule),
-    },
-    {
-      path: 'miscellaneous',
-      loadChildren: () => import('./miscellaneous/miscellaneous.module')
-        .then(m => m.MiscellaneousModule),
+      path: 'programaciones',
+      canActivate: [AutenticacionGuard],
+      loadChildren: () => import('./programaciones/programaciones.module')
+        .then(m => m.ProgramacionesModule)
     },
     {
       path: '',
-      redirectTo: 'dashboard',
+      redirectTo: 'eventos',
       pathMatch: 'full',
     },
     {

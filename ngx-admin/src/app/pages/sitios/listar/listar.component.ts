@@ -38,7 +38,7 @@ export class ListarComponent implements OnInit {
         this.sitiosService.destroy(id).subscribe((data) => {
           Swal.fire(
             "Eliminado!",
-            "El usuario ha sido eliminado correctamente",
+            "El sitio ha sido eliminado correctamente",
             "success"
           );
           this.ngOnInit();

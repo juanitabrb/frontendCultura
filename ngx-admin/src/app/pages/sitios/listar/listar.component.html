@@ -14,8 +14,8 @@
             <tr *ngFor="let sitioActual of misSitios" >
                 <td scope="col">{{sitioActual.id}}</td>
                 <td scope="col">{{sitioActual.nombre}}</td>
-                <td scope="col">{{sitioActual.correo}}</td>
-                <td scope="col">{{sitioActual.rol?.nombre}}</td>
+                <td scope="col">{{sitioActual.direccion}}</td>
+                <td scope="col">{{sitioActual.capacidad}}</td>
                 <td scope="col">
                 <button class="btn btn-success" (click)="actualizar(sitioActual.id)">Actualizar</button>
                     <button class="btn btn-danger" (click)="eliminar(sitioActual.id)">Eliminar</button>
