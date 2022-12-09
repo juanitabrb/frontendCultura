@@ -52,6 +52,10 @@ export class ListarComponent implements OnInit {
     this.router.navigate(['/pages/usuarios/actualizar/'+id]);
   }
 
+  ver(id: number): void {
+    this.router.navigate(['/pages/usuarios/show/'+id]);
+  }
+
   crear(): void {
     this.router.navigate(['/pages/usuarios/crear']);
   }

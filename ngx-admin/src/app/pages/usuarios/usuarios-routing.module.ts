@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdministradorGuard } from '../../guardianes/administrador.guard';
 import { CrearComponent } from './crear/crear.component';
 import { ListarComponent } from './listar/listar.component';
+import { ShowComponent } from './show/show.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,15 @@ const routes: Routes = [
   {
     path: 'actualizar/:id',
     component: CrearComponent
+  },
+  {
+    path: 'show/:id',
+    component: ShowComponent
+  },
+  {
+    path: '',
+    redirectTo: 'listar',
+    pathMatch: 'full'
   }
 ];
 
