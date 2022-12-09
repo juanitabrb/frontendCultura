@@ -5,6 +5,7 @@ import { PagesComponent } from './pages.component';
 import { ECommerceComponent } from './e-commerce/e-commerce.component';
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
 import { AutenticacionGuard } from '../guardianes/autenticacion.guard';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [{
   path: '',
@@ -15,6 +16,10 @@ const routes: Routes = [{
       canActivate: [AutenticacionGuard],
       loadChildren: () => import('./eventos/eventos.module')
         .then(m => m.EventosModule),
+    },
+    {
+      path: 'home',
+      component: HomeComponent
     },
     {
       path: 'usuarios',

@@ -1,0 +1,15 @@
+<!-- Show all the events -->
+<div class="container">
+    <h1>Eventos</h1>
+    <div class="list-eventos">
+        <div *ngFor="let evento of eventos">
+            <div class="card" style="width: 18rem;">
+                <img [src]="evento.programacion?evento.programacion.foto:'https://www.ecommerceacademy.pe/wp-content/uploads/2017/09/eventos.png'" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{evento.nombre}}</h5>
+                  <p class="card-text">{{evento.descripcion}}</p>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>

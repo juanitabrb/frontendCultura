@@ -34,6 +34,7 @@ export class PagesComponent {
       if (id == environment.ID_ROL_ADMIN) {
         nameMenuItems = [
           //TODO: agregar demas cosas
+          "Home",
           "Eventos",
           "Usuarios",
           "E-commerce",
@@ -46,7 +47,7 @@ export class PagesComponent {
           "Reservas",
         ];
       } else {
-        nameMenuItems = ["Sitios"];
+        nameMenuItems = ["Eventos","Home"];
       }
     } else {
       nameMenuItems = ["Sitios"];

@@ -1,4 +1,5 @@
 import { Categoria } from "./categoria.model";
+import { Programacion } from "./programacion.model";
 import { Sitio } from "./sitio.model";
 
 export class Evento{
@@ -10,4 +11,5 @@ export class Evento{
     id_sitio?: number;
     sitio?: Sitio;
     categoria?: Categoria;
+    programacion?: Programacion;
 }

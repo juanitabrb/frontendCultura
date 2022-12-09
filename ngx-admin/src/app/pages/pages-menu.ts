@@ -2,10 +2,15 @@ import { NbMenuItem } from '@nebular/theme';
 
 export const MENU_ITEMS: NbMenuItem[] = [
   {
+    title: 'Home',
+    icon: 'home-outline',
+    link: '/pages/home',
+    home: true,
+  },
+  {
     title: 'Eventos',
     icon: 'people-outline',
     link: '/pages/eventos/listar',
-    home: true,
     children: [
       {
         title: 'Listar',
@@ -91,6 +96,18 @@ export const MENU_ITEMS: NbMenuItem[] = [
       {
         title: 'Crear',
         link: '/pages/reservas/crear',
+      },
+
+    ]
+  },
+  {
+    title: 'Mis reservas',
+    icon: 'people-outline',
+    link: '/pages/reservas',
+    children: [
+      {
+        title: 'Listar',
+        link: '/pages/reservas/listar',
       },
 
     ]
