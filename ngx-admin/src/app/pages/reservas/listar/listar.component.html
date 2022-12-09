@@ -1,0 +1,25 @@
+<div class="container">
+    <h1>Reservas</h1>
+    <button class="btn btn-primary" (click)="crear()">Crear</button>
+    <table class="table">
+        <thead>
+            <tr>
+                <th *ngFor="let columnaActual of columnas" scope="col">
+                    {{columnaActual}}
+                </th>
+            </tr>
+               
+        </thead>
+        <tbody>
+            <tr *ngFor="let reservaActual of misReservas" >
+                <td scope="col">{{reservaActual.id}}</td>
+                <td scope="col">{{reservaActual.id_usuario}}</td>
+                <td scope="col">{{reservaActual.id_evento?.nombre}}</td>
+                <td scope="col">
+                <button class="btn btn-success" (click)="actualizar(reservaActual.id)">Actualizar</button>
+                    <button class="btn btn-danger" (click)="eliminar(reservaActual.id)">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

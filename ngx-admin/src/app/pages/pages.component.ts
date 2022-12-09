@@ -43,6 +43,7 @@ export class PagesComponent {
           "Managers",
           "Contratos",
           "Programaciones",
+          "Reservas",
         ];
       } else {
         nameMenuItems = ["Sitios"];

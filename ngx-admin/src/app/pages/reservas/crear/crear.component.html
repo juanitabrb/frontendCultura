@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <h1 *ngIf="modoCreacion">Crear Reserva</h1>
+    <h1 *ngIf="!modoCreacion">Actualizar Reserva</h1>
+  </div>
+  <div class="row">
+    <div class="col-3">
+      <label>id evento</label>
+    </div>
+    <div class="col-9">
+      <input type="text" class="form-control" [(ngModel)]="laReserva.id_evento" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-3">
+      <label>id usuario</label>
+    </div>
+    <div class="col-9">
+      <input type="text" class="form-control" [(ngModel)]="laReserva.id_usuario" />
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <button *ngIf="modoCreacion" class="btn btn-primary btn-block" (click)="crear()"> Crear</button>
+    <button *ngIf="!modoCreacion" class="btn btn-success btn-block" (click)="actualizar()"> Actualizar</button>
+  </div>
+</div>

@@ -72,6 +72,12 @@ const routes: Routes = [{
         .then(m => m.ProgramacionesModule)
     },
     {
+      path: 'reservas',
+      canActivate: [AutenticacionGuard],
+      loadChildren: () => import('./reservas/reservas.module')
+        .then(m => m.ReservasModule)
+    },
+    {
       path: '',
       redirectTo: 'eventos',
       pathMatch: 'full',
