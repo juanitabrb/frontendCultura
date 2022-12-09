@@ -1,3 +1,5 @@
+import { Evento } from "./evento.model";
+
 export class Usuario {
     id?: number;
     nombre?: string;
@@ -5,4 +7,5 @@ export class Usuario {
     contrasena?: string;
     id_rol?:number;
     token?: string;
+    eventos?: Evento[];
 }
