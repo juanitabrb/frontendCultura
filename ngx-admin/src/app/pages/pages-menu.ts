@@ -80,6 +80,22 @@ export const MENU_ITEMS: NbMenuItem[] = [
     ]
   },
   {
+    title: 'Reservas',
+    icon: 'people-outline',
+    link: '/pages/reservas',
+    children: [
+      {
+        title: 'Listar',
+        link: '/pages/reservas/listar',
+      },
+      {
+        title: 'Crear',
+        link: '/pages/reservas/crear',
+      },
+
+    ]
+  },
+  {
     title: 'Managers',
     icon: 'people-outline',
     link: '/pages/managers',
