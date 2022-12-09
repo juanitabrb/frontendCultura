@@ -1,1 +1,26 @@
-<p>listar works!</p>
+<div class="container">
+    <h1>Programaciones</h1>
+    <button class="btn btn-primary" (click)="crear()">Crear</button>
+    <table class="table">
+        <thead>
+            <tr>
+                <th *ngFor="let columnaActual of columnas" scope="col">
+                    {{columnaActual}}
+                </th>
+            </tr>
+               
+        </thead>
+        <tbody>
+            <tr *ngFor="let sitioActual of misSitios" >
+                <td scope="col">{{sitioActual.id}}</td>
+                <td scope="col">{{sitioActual.descripcion}}</td>
+                <td scope="col">{{sitioActual.foto}}</td>
+                <td scope="col">{{sitioActual.id_evento}}</td>
+                <td scope="col">
+                <button class="btn btn-success" (click)="actualizar(sitioActual.id)">Actualizar</button>
+                    <button class="btn btn-danger" (click)="eliminar(sitioActual.id)">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
