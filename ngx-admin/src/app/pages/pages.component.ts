@@ -50,7 +50,7 @@ export class PagesComponent {
         nameMenuItems = ["Eventos","Home"];
       }
     } else {
-      nameMenuItems = ["Sitios"];
+      nameMenuItems = ["Eventos"];
     }
 
     //console.log("nameMenuItems->"+JSON.stringify(nameMenuItems))
