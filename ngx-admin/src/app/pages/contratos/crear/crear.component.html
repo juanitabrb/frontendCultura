@@ -1,1 +1,26 @@
-<p>crear works!</p>
+<div class="container">
+    <div class="row">
+      <h1 *ngIf="modoCreacion">Crear Programacion</h1>
+      <h1 *ngIf="!modoCreacion">Actualizar Programacion</h1>
+    </div>
+    <div class="row">
+        <div class="col-3">
+          <label>ID Agrupacion</label>
+        </div>
+        <div class="col-9">
+          <input type="text" class="form-control" [(ngModel)]="elEvento.id_agrupacion" />
+        </div>
+        <div class="col-3">
+            <label>ID Evento</label>
+          </div>
+          <div class="col-9">
+            <input type="text" class="form-control" [(ngModel)]="elEvento.id_evento" />
+          </div>
+      </div>
+    <br>
+    <div class="row">
+      <button *ngIf="modoCreacion" class="btn btn-primary btn-block" (click)="crear()"> Crear</button>
+      <button *ngIf="!modoCreacion" class="btn btn-success btn-block" (click)="actualizar()"> Actualizar</button>
+    </div>
+  </div>
+  

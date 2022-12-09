@@ -1,0 +1,21 @@
+<div class="container">
+    <h1>Listado de eventos para la agrupacion</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th *ngFor="let columnaActual of columnas" scope="col">
+                    {{columnaActual}}
+                </th>
+            </tr>
+               
+        </thead>
+        <tbody>
+            <tr *ngFor="let evento of misEventos" >
+                <td scope="col">{{evento.id}}</td>
+                <td scope="col">{{evento.nombre}}</td>
+                <td scope="col">{{evento.descripcion}}</td>
+                <td scope="col">{{evento.fecha}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
