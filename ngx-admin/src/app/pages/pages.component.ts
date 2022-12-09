@@ -46,10 +46,10 @@ export class PagesComponent {
           "Reservas",
         ];
       } else {
-        nameMenuItems = ["Sitios"];
+        nameMenuItems = ["Eventos"];
       }
     } else {
-      nameMenuItems = ["Sitios"];
+      nameMenuItems = ["Eventos"];
     }
 
     //console.log("nameMenuItems->"+JSON.stringify(nameMenuItems))
