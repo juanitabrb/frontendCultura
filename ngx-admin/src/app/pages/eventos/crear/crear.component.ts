@@ -49,7 +49,7 @@ export class CrearComponent implements OnInit {
               'La programacion ha sido creado correctamente',
               'success'
             )
-            this.router.navigate(['/pages/programaciones/listar']);
+            this.router.navigate(['/pages/eventos/listar']);
         });
   }
   actualizar(){

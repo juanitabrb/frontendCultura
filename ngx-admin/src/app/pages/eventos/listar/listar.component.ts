@@ -11,7 +11,7 @@ import { EventoService } from '../../../services/evento.service';
 })
 export class ListarComponent implements OnInit {
 
-  columnas: string[] = ["ID", "Nombre", "Descripcion", "Categoria", "Sitio", "Acciones"];
+  columnas: string[] = ["ID", "Nombre", "Descripcion", "Fecha",  "Categoria", "Sitio", "Acciones"];
   misSitios: Evento[];
 
   constructor(private eventoService: EventoService, private router:Router) {}
